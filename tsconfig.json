@@ -1,0 +1,30 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"strictNullChecks": false,
+		"jsx": "preserve",
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"useDefineForClassFields": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"allowJs": true,
+		"baseUrl": ".",
+		"types": ["vite/client"],
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "package.json", "@/**/*.ts"],
+	"exclude": ["node_modules"]
+}

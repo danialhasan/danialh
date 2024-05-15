@@ -1,0 +1,22 @@
+# Global settings applied to the whole site.
+# This defines which directory Netlify should publish.
+[build]
+  publish = "dist" # or "build", depending on your build output directory
+  command = "npm run build" # Your build command
+
+# Redirects and rewrite rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Custom headers for enhanced security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    Content-Security-Policy = "default-src https: 'self' 'unsafe-eval' 'unsafe-inline'; img-src 'self' https: data:;"
+
